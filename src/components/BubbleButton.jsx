@@ -4,20 +4,18 @@ import "./BubbleButton.css";
 const BubbleButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [position, setPosition] = useState({
-    x: window.innerWidth - 80, // Posición inicial en X
-    y: window.innerHeight - 80, // Posición inicial en Y
+    x: window.innerWidth - 80,
+    y: window.innerHeight - 80,
   });
   const [dragging, setDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   const toggleChat = (e) => {
-    // Evitamos que el clic inicie el arrastre cuando se hace click en el botón
     e.stopPropagation();
     setIsOpen(!isOpen);
   };
 
   const onMouseDown = (e) => {
-    // Solo consideramos el botón izquierdo del mouse
     if (e.button !== 0) return;
     setDragging(true);
     setOffset({
@@ -46,8 +44,6 @@ const BubbleButton = () => {
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseup", onMouseUp);
     }
-
-    // Limpieza al desmontar o cambiar dragging
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseup", onMouseUp);
@@ -75,7 +71,7 @@ const BubbleButton = () => {
         <div className="chat-window">
           <iframe
             title="Chat Iframe"
-            src="http://tu-backend.com/chat" // Reemplaza con la URL de tu backend
+            src="http://127.0.0.1:5000/chat-widget" // Ahora apunta al endpoint que sirve la interfaz
             width="100%"
             height="100%"
             frameBorder="0"
