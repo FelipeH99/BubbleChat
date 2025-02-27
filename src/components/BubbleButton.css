@@ -1,0 +1,75 @@
+/* BubbleButton.css */
+.bubble-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.bubble-button:hover {
+  background-color: #0056b3;
+}
+
+.chat-window {
+  position: absolute;
+  bottom: 80px; /* Ajusta según el tamaño y separación deseada */
+  right: 0;
+  width: 300px;
+  max-height: 400px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+}
+  
+  .chat-window {
+    position: absolute;
+    bottom: 80px; /* Separación del botón */
+    right: 0;
+    width: 300px;
+    max-height: 400px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 15px;
+  }
+.chat-bubble {
+    max-width: 60%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin: 8px;
+    position: relative;
+    word-wrap: break-word;
+  }
+  
+  /* Estilo para mensajes del usuario */
+  .chat-bubble.user {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+  }
+  
+  /* Estilo para mensajes del bot o interlocutor */
+  .chat-bubble.bot {
+    background-color: #fff;
+    align-self: flex-start;
+  }
+  
+  /* Estilos para contenido embebido */
+  .embed-content {
+    margin-top: 10px;
+  }
+  
+  .embed-content iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+  }
+  
